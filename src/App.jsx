@@ -20,7 +20,7 @@ function App() {
     <>
       <Header />
       <AddContact />
-      <ContactList />
+      <ContactList contacts={contacts} />
     </>
   )
 }

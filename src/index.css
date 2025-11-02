@@ -9,3 +9,13 @@ input {
   border-radius: 10px;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
 }
+
+.contactList {
+  width: 70%;
+  margin: 10px auto;
+  padding: 15px;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  line-height: 10px;
+  display: flex;
+}
