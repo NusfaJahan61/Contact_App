@@ -1,28 +1,23 @@
+import { useState } from "react"
 import AddContact from "./components/AddContact"
 import ContactCard from "./components/ContactCard"
 import ContactList from "./components/ContactList"
 import Header from "./components/Header"
+import NoContactMsg from "./components/NoContactMsg"
 
 function App() {
-  const contacts = [
-    {
-      id: 1,
-      name: "Ikra",
-      contactNum: "+8912 1212 2112",
-      email: "ikra@gmail.com"
-    }, {
-      id: 2,
-      name: "Nusfa",
-      contactNum: "+8912 1212 2112",
-      email: "nusfa@gmail.com"
-    }
-  ]
+  const [contacts, setContacts] = useState([])
   return (
     <>
       <Header />
       <AddContact />
       <ContactList />
-      <ContactCard contacts={contacts} />
+      {
+        contacts == " " ?
+          <ContactCard contacts={contacts} /> :
+          <NoContactMsg />
+      }
+
     </>
   )
 }
