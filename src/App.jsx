@@ -1,4 +1,5 @@
 import AddContact from "./components/AddContact"
+import ContactCard from "./components/ContactCard"
 import ContactList from "./components/ContactList"
 import Header from "./components/Header"
 
@@ -20,7 +21,8 @@ function App() {
     <>
       <Header />
       <AddContact />
-      <ContactList contacts={contacts} />
+      <ContactList />
+      <ContactCard contacts={contacts} />
     </>
   )
 }
