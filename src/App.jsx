@@ -7,17 +7,15 @@ import NoContactMsg from "./components/NoContactMsg"
 
 function App() {
   const [contacts, setContacts] = useState([])
+  const addContactHandler = (contact) => {
+    setContacts([...contacts, contact])
+  }
   return (
     <>
       <Header />
-      <AddContact />
+      <AddContact addContactHandler={addContactHandler} />
+      <ContactCard contacts={contacts} /> :
       <ContactList />
-      {
-        contacts == " " ?
-          <ContactCard contacts={contacts} /> :
-          <NoContactMsg />
-      }
-
     </>
   )
 }
