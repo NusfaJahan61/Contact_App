@@ -4,6 +4,7 @@ import ContactCard from "./components/ContactCard"
 import ContactList from "./components/ContactList"
 import Header from "./components/Header"
 import NoContactMsg from "./components/NoContactMsg"
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -29,8 +30,10 @@ function App() {
   return (
     <>
       <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactCard contacts={contacts} /> :
+      <Routes>
+        <Route path="/" element={<AddContact addContactHandler={addContactHandler} />} />
+        <Route path="/contacts" element={<ContactCard contacts={contacts} />} />
+      </Routes>
       <ContactList />
     </>
   )
