@@ -2,6 +2,11 @@ input {
   font-size: 18px;
 }
 
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
 .contactCard {
   width: 70%;
   margin: auto;
