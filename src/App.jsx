@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 import AddContact from "./components/AddContact"
 import ContactCard from "./components/ContactCard"
 import ContactList from "./components/ContactList"
-import Header from "./components/Header"
 import NoContactMsg from "./components/NoContactMsg"
-import { Route, Routes } from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, Routes } from "react-router-dom"
+import RootLayout from "./layout/RootLayout"
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -27,14 +27,21 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts))
   }, [contacts])
 
+
+  // ____________ROUTER:
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<AddContact addContactHandler={addContactHandler} />} />
+        <Route path="/contacts" element={<ContactCard contacts={contacts} />} />
+      </Route>
+    )
+  )
+
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<AddContact addContactHandler={addContactHandler} />} />
-        <Route path="/contacts" element={<ContactCard contacts={contacts} />} />
-      </Routes>
-      <ContactList />
+      <RouterProvider router={router} />
     </>
   )
 }
