@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
     <div className='header'>
       <p style={{ fontSize: "40px" }}>Contact Manager</p>
       <div>
-        <Link to="/contacts" ><button>Go to Contacts</button></Link>
-        <Link to="/" ><button style={{ marginLeft: "10px" }}>Add Contact</button></Link>
+        <NavLink to="/contacts" ><button>Go to Contacts</button></NavLink>
+        <NavLink to="/" ><button style={{ marginLeft: "10px" }}>Add Contact</button></NavLink>
       </div>
     </div>
   )

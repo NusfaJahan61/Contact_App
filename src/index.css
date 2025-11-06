@@ -7,6 +7,10 @@ input {
   justify-content: space-around;
 }
 
+.header a .active {
+  color: red;
+}
+
 .contactCard {
   width: 70%;
   margin: auto;
