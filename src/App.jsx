@@ -3,7 +3,7 @@ import AddContact from "./components/AddContact"
 import ContactCard from "./components/ContactCard"
 import ContactList from "./components/ContactList"
 import NoContactMsg from "./components/NoContactMsg"
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, Routes } from "react-router-dom"
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, useNavigate } from "react-router-dom"
 import RootLayout from "./layout/RootLayout"
 
 function App() {
@@ -38,6 +38,8 @@ function App() {
       </Route>
     )
   )
+
+
 
   return (
     <>

@@ -1,6 +1,5 @@
 import React from 'react'
 import user from './../images/user.jpg'
-
 class AddContact extends React.Component {
   state = {
     name: '',
@@ -55,7 +54,7 @@ class AddContact extends React.Component {
               name='emailAdd'
               value={this.state.email}
               onChange={(event) => this.setState({ email: event.target.value })} />
-            <button>Add</button>
+            <button >Add</button>
           </form>
         </div>
       </>
