@@ -5,6 +5,7 @@ import ContactList from "./components/ContactList"
 import NoContactMsg from "./components/NoContactMsg"
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, useNavigate } from "react-router-dom"
 import RootLayout from "./layout/RootLayout"
+import NotFound from "./components/404page"
 
 function App() {
   const LOCAL_STORAGE_KEY = "contacts";
@@ -35,11 +36,10 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<AddContact addContactHandler={addContactHandler} />} />
         <Route path="/contacts" element={<ContactCard contacts={contacts} />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     )
   )
-
-
 
   return (
     <>
