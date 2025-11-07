@@ -16,6 +16,11 @@ function App() {
     setContacts([...contacts, contact])
   }
 
+  const removeContactHandler = (contacts) => {
+    const newContacts = localStorage.removeItem(LOCAL_STORAGE_KEY)
+
+  }
+
   useEffect(() => {
     const reloadData = localStorage.getItem(LOCAL_STORAGE_KEY)
     if (reloadData) {
@@ -27,7 +32,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts))
   }, [contacts])
-
 
   // ____________ROUTER:
 

@@ -23,6 +23,7 @@ const ContactCard = ({ contacts }) => {
                 <p>{contactInfo.contactNum}</p>
                 <p>{contactInfo.email}</p>
               </div>
+              <button style={{ marginLeft: "70%", marginTop: "35px" }}>Delete</button>
             </div>
           )
         })
